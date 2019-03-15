@@ -8,7 +8,7 @@ int main(void)
     while (std::cin >> s) {
         std::string tmp = s;
         std::reverse(tmp.begin(), tmp.end());
-        for (unsigned long i = 0; i < s.size(); i++) {
+        for (size_t i = 0; i < s.size(); i++) {
             if (std::equal(tmp.begin(), tmp.end() - i, s.begin() + i)) {
                 std::cout << s.substr(i) << std::endl;
                 break;
