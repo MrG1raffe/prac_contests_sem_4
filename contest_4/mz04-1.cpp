@@ -6,18 +6,18 @@ typename T::value_type process(const T &k)
     if (p == first) {
         return res;
     }
-    p--;
-    res = res + *p;
+    --p;
+    res += *p;
     if (p == first) {
         return res;
     }
     for (int i = 0; i < 2; i++) {
-        p--;
+        --p;
         if (p == first) {
             break;
         }
-        p--;
-        res = res + *p;
+        --p;
+        res += *p;
         if (p == first) {
             break;
         }
