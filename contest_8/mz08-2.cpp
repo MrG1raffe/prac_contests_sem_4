@@ -19,12 +19,15 @@ int check(void)
         c = getchar();
     }
     if (!k || !m) {
-        while (c == '0' || c == '1' || c != ' ' || c != '\n') {
+        while ((c == '0' || c == '1') || !isspace(c)) {
             c = getchar();
+            if (c == EOF) {
+                return 0;
+            }
         }
         return 0;
     }
-    while (c == '0' || c == '1' || c != ' ' || c != '\n') {
+    while ((c == '0' || c == '1')) {
         int k1, m1;
         k1 = m1 = 0;
         while (c == '0') {
@@ -36,11 +39,23 @@ int check(void)
             c = getchar();
         }
         if (k1 != k || m1 != m) {
-            while (c == '0' || c == '1' || c != ' ' || c != '\n') {
+            while ((c == '0' || c == '1') || !isspace(c)) {
                 c = getchar();
+                if (c == EOF) {
+                    return 0;
+                }
             }   
             return 0;
         }
+    }
+    if (c != '0' && c != '1' && !isspace(c) && c != EOF) {
+        while(!isspace(c)) {
+            c = getchar();
+            if (c == EOF) {
+                return 0;
+            }
+        }
+        return 0;
     }
     return 1;
 }
