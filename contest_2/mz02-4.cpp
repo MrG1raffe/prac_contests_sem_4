@@ -203,7 +203,7 @@ namespace numbers
 
 int main(int argc, char **argv)
 {
-    enum { STR_SIZE = 100 };
+    enum { STR_SIZE = 40 };
     numbers::complex c(argv[1]);
     double r;
     sscanf(argv[2], "%lf", &r);

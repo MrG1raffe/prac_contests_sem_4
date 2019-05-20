@@ -34,8 +34,7 @@ std::pair<bool, size_t> check(const std::string &cur, size_t cnt)
     }
 
     for (size_t i = 0; i < rules[cur + " " + input[cnt]].size(); i++) {
-        size_t cnt_1 = cnt;
-        tmp = check(rules[cur + " " + input[cnt_1]][i], ++cnt);
+        tmp = check(rules[cur + " " + input[cnt]][i], 1 + cnt);
         if (tmp.first > best.first || (!best.first && tmp.second > best.second)) {
             best = tmp;
         }

@@ -26,7 +26,7 @@ public:
             std::cout << res << std::endl;
         }
     }
-    operator bool()
+    explicit operator bool() const
     {
         return !is_exit;
     }
